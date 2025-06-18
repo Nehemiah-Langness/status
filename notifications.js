@@ -16,7 +16,7 @@ self.addEventListener("push", async function (event) {
       const body = data.body ?? "Nehemiah is currently in a meeting";
       const tag = "do-not-disturb";
 
-      self.registration.showNotification(title, {
+      await self.registration.showNotification(title, {
         body: body,
         icon: "/red.svg",
         badge: "/mask.svg",
