@@ -2,8 +2,6 @@ self.addEventListener("install", () => self.skipWaiting());
 
 self.addEventListener("push", async function (event) {
   const data = event.data?.json() ?? {};
-  console.log("Received a push message", data);
-
   if (!(self.Notification && self.Notification.permission === "granted")) {
     return;
   }
